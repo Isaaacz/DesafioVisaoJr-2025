@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import logoImage from './assets/W&Jlogo.png';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* Cabeçalho */}
+      <header className="cabecalho">
+          <div className="logo-cabecalho">
+          <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
+        </div>
+        <nav className="links-navegacao">
+          <a href="#inicio">Início</a>
+          <a href="#sobre-nos">Sobre Nós</a>
+          <a href="#nossas-empresas">Nossas Empresas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </header>
+
+      {/* Seção */}
+      <section id="inicio" className="container-secao secao-principal">
+        <div className="conteudo-secao">
+            <h1>Início</h1>
+        </div>
+      </section>
+
+      {/* Seção Sobre Nós */}
+      <section id="sobre-nos" className="container-secao secao-sobre-nos">
+        <div className="conteudo-secao">
+          <h1>Sobre Nós</h1>
+        </div>
+      </section>
+
+      {/* Seção Nossas Empresas */}
+      <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
+        <div className="conteudo-secao">
+          <h1>Nossas Empresas</h1>
+        </div>
+      </section>
+
+      {/* Seção Contato */}
+      <section id="contato" className="container-secao secao-contato">
+        <div className="conteudo-secao">
+          <h1>Contato</h1>
+        </div>
+      </section>
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
