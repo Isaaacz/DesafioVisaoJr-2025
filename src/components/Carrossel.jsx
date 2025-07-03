@@ -3,9 +3,9 @@ import styles from './Carrossel.module.css';
 
 export function Carrossel() {
   const slides = [
-    { id: 0, titulo: 'História', descricao: 'Este é o slide inicial com uma introdução simples.' },
-    { id: 1, titulo: 'Valores', descricao: 'Este é o conteúdo principal do carrossel.' },
-    { id: 2, titulo: 'Futuro', descricao: 'Aqui termina o carrossel, com uma mensagem final.' },
+    { id: 0, titulo: 'História', descricao: 'd1.' },
+    { id: 1, titulo: 'Valores', descricao: 'd2.' },
+    { id: 2, titulo: 'Futuro', descricao: 'd3.' },
   ];
 
   const [ativo, setAtivo] = useState(0); 
@@ -25,8 +25,9 @@ export function Carrossel() {
 
      
         <div className={styles.slideCentral}>
-          <h2>{slides[ativo].titulo}</h2>
-          <p className={styles.descricao}>{slides[ativo].descricao}</p>
+            <h2>{slides[ativo].titulo}</h2>
+            <hr className={styles.divider} />
+            <p className={styles.descricao}>{slides[ativo].descricao}</p>
         </div>
 
   
