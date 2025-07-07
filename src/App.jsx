@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
+import {Inicio } from './Inicio'
 
 
 import './App.css'
@@ -24,12 +25,8 @@ function App() {
         </nav>
       </header>
 
-      {/* Seção */}
-      <section id="inicio" className="container-secao secao-principal">
-        <div className="conteudo-secao">
-            <h1>Início</h1>
-        </div>
-      </section>
+      {/* Seção Início */}
+      <Inicio />
 
       {/* Seção Sobre Nós */}
       <section id="sobre-nos" className="container-secao secao-sobre-nos">
