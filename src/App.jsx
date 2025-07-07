@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import logoImage from './assets/W&Jlogo.png';
+import logoImage from './assets/w.png';
 import { Carrossel } from './Carrossel';
-import { useState } from 'react'
+
 
 import './App.css'
 
