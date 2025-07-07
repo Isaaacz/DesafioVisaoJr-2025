@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import './App.css';
-import logoImage from './assets/w.png';
+import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
 
 
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
