@@ -54,16 +54,17 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Estilos para o cabeçalho */
 .cabecalho {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 80px; 
   background-color: #1447E6;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start; 
   gap: 10px;
   padding: 0 20px;
   box-sizing: border-box;
@@ -72,7 +73,7 @@ button:focus-visible {
 }
 
 .logo-cabecalho {
-  height: 150px;
+  height: 130px;
   display: flex;
   align-items: center;
 }
@@ -82,7 +83,7 @@ button:focus-visible {
   width: auto;
 }
 
-.links-navegacao {
+.links-navegacao { 
   display: flex;
   gap: 35px;
 }
@@ -100,7 +101,112 @@ button:focus-visible {
   color: #cccccc;
 }
 
+/* Ícone do Hambúrguer - Escondido por padrão no desktop */
+.icone-hamburguer {
+  display: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Estilos do Menu Lateral */
+.menu-lateral { 
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #1a1a1a;
+  z-index: 2000;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.menu-lateral.aberto {
+  left: 0;
+}
+
+/* Estilos dos links dentro do menu lateral (navegação mobile) */
+.links-navegacao.nav-mobile { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.links-navegacao.nav-mobile a {
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.links-navegacao.nav-mobile a:last-child {
+  border-bottom: none;
+}
+
+.overlay-menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.overlay-menu-lateral.aberto {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    height: 80px;
+    justify-content: space-between; 
+    padding: 0 20px;
+  }
+
+  .links-navegacao.nav-desktop { 
+    display: none;
+  }
+  .logo-imagem {
+    height: 130px;
+    max-height: none;
+    width: auto; 
+  }
+
+  .icone-hamburguer {
+    display: block;
+  }
+  .secao-principal {
+    padding-top: 80px;
+  }
+}
+
 .secao-principal {
+  padding-top: 80px;
   background-color: #162456;
   color: white;
 }

@@ -9,21 +9,44 @@ import './App.css'
 
 function App() {
 
+  const [menuLateralAberto, setMenuLateralAberto] = useState(false);
+
+  const alternarMenuLateral = () => { 
+    setMenuLateralAberto(!menuLateralAberto);
+  };
+
 
   return (
     <>
       {/* Cabeçalho */}
       <header className="cabecalho">
-          <div className="logo-cabecalho">
+        <div className="logo-cabecalho">
           <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
         </div>
-        <nav className="links-navegacao">
+
+        <div className="icone-hamburguer" onClick={alternarMenuLateral}>
+          ☰
+        </div>
+
+        <nav className="links-navegacao nav-desktop">
           <a href="#inicio">Início</a>
           <a href="#sobre-nos">Sobre Nós</a>
           <a href="#nossas-empresas">Nossas Empresas</a>
           <a href="#contato">Contato</a>
         </nav>
       </header>
+
+      {/* Menu Lateral (MOBILE) */}
+      <div className={`menu-lateral ${menuLateralAberto ? 'aberto' : ''}`}>
+        <nav className="links-navegacao nav-mobile">
+          <a href="#inicio" onClick={alternarMenuLateral}>Início</a>
+          <a href="#sobre-nos" onClick={alternarMenuLateral}>Sobre Nós</a>
+          <a href="#nossas-empresas" onClick={alternarMenuLateral}>Nossas Empresas</a>
+          <a href="#contato" onClick={alternarMenuLateral}>Contato</a>
+        </nav>
+      </div>
+
+      {menuLateralAberto && <div className="overlay-menu-lateral" onClick={alternarMenuLateral}></div>}
 
       {/* Seção Início */}
       <Inicio />
