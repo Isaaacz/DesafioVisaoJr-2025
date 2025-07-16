@@ -132,110 +132,118 @@
   text-align: center;
 }
 /* Telas médias: tablets e celulares grandes */
+/* src/components/Carrossel/Carrossel.module.css */
+
+/* ... (seus estilos base) ... */
+
+/* Telas médias: tablets e celulares grandes */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
   }
 
   .carrossel {
-    gap: 1.2rem;
-    transform: scale(0.85);
-    transform-origin: top center;
+    gap: 2rem; /* Aumenta o espaço entre os slides */
+    align-items: center; /* Garante que os slides estejam alinhados verticalmente */
+    transform: scale(0.9);
+    transform-origin: center;
   }
 
-   .slideCentral::before {
-    content: '→'; /* Agora seta aponta para a direita */
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.5rem;
-    pointer-events: none;
-    z-index: 2;
+  .slideCentral {
+    width: 65vw; /* Largura maior relativa à viewport */
+    max-width: 500px; /* Limite máximo de largura */
+    height: 35vh; /* Altura maior relativa à viewport */
+    max-height: 300px; /* Limite máximo de altura */
+    padding: 1.5rem;
   }
 
   .slideCentral h2 {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 
   .descricao {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .divider {
-    width: 75%;
-    height: 1px;
+    width: 80%;
+  }
+
+  .slideLateral {
+    display: flex; /* Garante que os slides laterais apareçam */
+    width: 20vw; /* Largura menor */
+    max-width: 150px; /* Limite máximo para largura lateral */
+    height: 20vh; /* Altura menor */
+    max-height: 150px; /* Limite máximo para altura lateral */
+    opacity: 0.7;
+    filter: grayscale(80%);
+  }
+
+  .slideLateral:hover {
+    opacity: 1;
+    filter: grayscale(0%);
   }
 
   .slideMini {
-    width: 8rem;
-    height: 14rem;
+    width: 100%;
+    height: 100%;
     font-size: 0.8rem;
   }
 
   .slideMini::after {
     font-size: 1rem;
-    top: 50%;
+    right: 35%;
   }
 
   .slideLateral p {
     font-size: 0.75rem;
+    margin-top: 0.3rem;
   }
 }
 
 /* Telas pequenas: celulares */
 @media (max-width: 480px) {
   .carrossel {
-    transform: scale(0.75);
+    gap: 1rem;
+    transform: scale(0.95);
   }
 
   .slideCentral {
-    width: 32rem;
-    height: 18rem;
+    width: 75vw; 
+    max-width: 320px;
+    height: 30vh;
+    max-height: 220px;
+    padding: 1rem;
   }
-  .slideCentral:hover {
-  transform: rotateY(3deg) scale(1.03);
-  border-color: white;
-  box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.4);
-  
-}
 
-
-  .slideCentral::before {
-    content: '→'; /* Agora seta aponta para a direita */
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.5rem;
-    pointer-events: none;
-    z-index: 2;
+  .slideCentral h2 {
+    font-size: 1.6rem;
   }
 
   .descricao {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .slideLateral {
+    display: flex;
+    width: 25vw; 
+    max-width: 100px; 
+    height: 15vh;
+    max-height: 100px;
+    opacity: 0.6;
+    filter: grayscale(90%);
   }
 
   .slideMini {
-    width: 6rem;
-    height: 12rem;
     font-size: 0.7rem;
   }
 
   .slideMini::after {
-    font-size: 0.8rem;
-    right: 38%;
+    right: 30%;
+    font-size: 0.9rem;
   }
 
   .slideLateral p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 }
