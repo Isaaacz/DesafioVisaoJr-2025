@@ -1,0 +1,75 @@
+/* src/components/EmpresaCard.css */
+.empresa-card {
+  background-color: #ffffff; /* Fundo branco para os cards */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px;
+  text-align: center;
+  flex: 1 1 calc(33.33% - 40px); /* Flexbox para 3 colunas, ajusta largura e margem */
+  max-width: 380px; /* Largura máxima para evitar cards muito grandes */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.empresa-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.empresa-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.empresa-card h2 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.empresa-card p {
+  color: #666;
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px; /* Mantém espaço mesmo sem o botão, pode ajustar se quiser */
+  flex-grow: 1; /* Permite que a descrição ocupe o espaço necessário */
+}
+
+/* Os estilos para o botão são mantidos, mas não terão efeito pois o botão foi removido */
+.empresa-botao {
+  background-color: #007bff;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.empresa-botao:hover {
+  background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .empresa-card {
+    flex: 1 1 calc(50% - 40px); /* 2 colunas em telas médias */
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .empresa-card {
+    flex: 1 1 calc(100% - 40px); /* 1 coluna em telas pequenas */
+    max-width: 500px; /* Para não ficar muito largo em telas menores */
+  }
+}
