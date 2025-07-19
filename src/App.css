@@ -226,7 +226,6 @@ button:focus-visible {
 }
 
 .secao-contato {
-  background-color: #00BBA7;
-  color: white;
-  position: relative;
+  background-color: #091240 !important;
+  color:  white;
 }

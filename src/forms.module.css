@@ -1,0 +1,86 @@
+.formContainer {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.footerContainer {
+  display: flex;
+  justify-content: center;   /* Centraliza os ícones horizontalmente */
+  align-items: center;       /* Alinha verticalmente os ícones entre si */
+  gap: 10px;                  /* Espaçamento entre os ícones */
+  padding: 20px 0 0 0;        /* Espaço acima opcional, remove espaço lateral e inferior */
+  background-color: transparent; /* Remove o fundo azul do footer */
+  margin-bottom: 8rem;
+}
+
+.footerContainer img {
+  filter: brightness(0) invert(1);
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #131a26; 
+  padding: 40px 20px;
+}
+
+.form {
+  color: white;
+  padding: 40px;
+ 
+  border-left: white 2px solid;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+}
+
+.form input,
+.form textarea {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  padding: 12px 0;
+  font-size: 16px;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-bottom-color: #000;
+}
+
+.form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.form button {
+  padding: 14px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #333;
+}

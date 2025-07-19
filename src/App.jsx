@@ -3,9 +3,9 @@ import './App.css';
 import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
 import {Inicio } from './Inicio'
+import { Forms } from './forms';
 
 
-import './App.css'
 
 function App() {
 
@@ -66,10 +66,11 @@ function App() {
         </div>
       </section>
 
-      {/* Seção Contato */}
-      <section id="contato" className="container-secao secao-contato">
+        {/* Seção Nossas Empresas */}
+      <section id= "contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          <h1>Contato</h1>
+          
+          <Forms></Forms>
         </div>
       </section>
 
