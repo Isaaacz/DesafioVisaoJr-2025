@@ -141,6 +141,7 @@ button:focus-visible {
 }
 
 .links-navegacao.nav-mobile a {
+  display: none;
   width: 100%;
   padding: 10px 0;
   text-align: left;
@@ -258,6 +259,9 @@ button:focus-visible {
 
   .icone-hamburguer {
     display: block;
+  }
+  .links-navegacao.nav-mobile a {
+    display:block;
   }
 }
 
