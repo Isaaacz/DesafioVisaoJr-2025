@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import styles from './Carrossel.module.css';
+import futuro from './assets/futuro.png'; // Caminho certo com import!
 
 export function Carrossel() {
   const slides = [
-    { id: 0, titulo: 'História', descricao: 'Uma jornada que conecta inovação e visão. A W&J nasceu da união de mentes empreendedoras com o propósito de transformar diferentes mercados por meio da tecnologia. Desde a fundação, o grupo expandiu sua atuação com empresas em setores diversos — da mídia à aviação — sempre guiado pela ousadia de criar, evoluir e liderar.' },
-    { id: 1, titulo: 'Valores', descricao: 'Tecnologia com propósito, negócios com impacto. Acreditamos no poder da inovação responsável. Nossos valores são guiados pela ética, excelência, criatividade e compromisso com a transformação real. Valorizamos talentos, promovemos inclusão e buscamos soluções que melhorem a vida das pessoas e o futuro do planeta.' },
-    { id: 2, titulo: 'Futuro', descricao: 'Conectando negócios, criando o amanhã. O futuro da W&J é global, digital e sustentável. Vamos expandir nossas frentes de atuação, integrar novas tecnologias e impulsionar cada marca do grupo com inteligência, agilidade e responsabilidade. O amanhã está em constante construção — e nós estamos liderando essa evolução.' },
+    { id: 0, titulo: 'História', descricao: 'Uma jornada que conecta inovação e visão. A W&J nasceu da união de mentes empreendedoras com o propósito de transformar diferentes mercados por meio da tecnologia. Desde a fundação, o grupo expandiu sua atuação com empresas em setores diversos — da mídia à aviação — sempre guiado pela ousadia de criar, evoluir e liderar.', img: futuro },
+    { id: 1, titulo: 'Valores', descricao: 'Tecnologia com propósito, negócios com impacto. Acreditamos no poder da inovação responsável. Nossos valores são guiados pela ética, excelência, criatividade e compromisso com a transformação real. Valorizamos talentos, promovemos inclusão e buscamos soluções que melhorem a vida das pessoas e o futuro do planeta.', img: futuro },
+    { id: 2, titulo: 'Futuro', descricao: 'Conectando negócios, criando o amanhã. O futuro da W&J é global, digital e sustentável. Vamos expandir nossas frentes de atuação, integrar novas tecnologias e impulsionar cada marca do grupo com inteligência, agilidade e responsabilidade. O amanhã está em constante construção — e nós estamos liderando essa evolução.', img: futuro },
   ];
 
-  const [ativo, setAtivo] = useState(0); 
+  const [ativo, setAtivo] = useState(0);
   const anterior = (ativo + 2) % 3;
   const proximo = (ativo + 1) % 3;
 
@@ -23,7 +24,7 @@ export function Carrossel() {
     <div className={styles.container}>
       <div className={styles.carrossel}>
 
-   
+        {/* Mini slide lateral - anterior */}
         <div
           className={styles.slideLateral}
           role="button"
@@ -34,22 +35,29 @@ export function Carrossel() {
           <div className={styles.slideMini}>
             <span className={styles.seta}>←</span>
           </div>
+          <p className={styles.slideMiniTitle}>{slides[anterior].titulo}</p>
         </div>
 
-    
+        {/* Slide central com background da imagem */}
         <div
           className={styles.slideCentral}
-          role="button"
-          tabIndex={0}
-          onClick={() => setAtivo(proximo)}
-          onKeyDown={(e) => handleKeyPress(e, () => setAtivo(proximo))}
+          // style={{
+          //   backgroundImage: `url(${slides[ativo].img})`,
+          //   backgroundSize: 'cover',
+          //   backgroundPosition: 'center',
+          //   backgroundRepeat: 'no-repeat',
+          // }}
+          // role="button"
+          // tabIndex={0}
+          // onClick={() => setAtivo(proximo)}
+          // onKeyDown={(e) => handleKeyPress(e, () => setAtivo(proximo))}
         >
           <h2>{slides[ativo].titulo}</h2>
           <hr className={styles.divider} />
           <p className={styles.descricao}>{slides[ativo].descricao}</p>
         </div>
 
-     
+        {/* Mini slide lateral - próximo */}
         <div
           className={styles.slideLateral}
           role="button"
@@ -60,6 +68,7 @@ export function Carrossel() {
           <div className={styles.slideMini}>
             <span className={styles.seta}>→</span>
           </div>
+          <p className={styles.slideMiniTitle}>{slides[proximo].titulo}</p>
         </div>
 
       </div>
