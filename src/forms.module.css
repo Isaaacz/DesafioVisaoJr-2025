@@ -1,19 +1,17 @@
 .formContainer {
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  
 }
+
 .footerContainer {
   display: flex;
-  justify-content: center;   /* Centraliza os ícones horizontalmente */
-  align-items: center;       /* Alinha verticalmente os ícones entre si */
-  gap: 10px;                  /* Espaçamento entre os ícones */
-  padding: 20px 0 0 0;        /* Espaço acima opcional, remove espaço lateral e inferior */
-  background-color: transparent; /* Remove o fundo azul do footer */
+  justify-content: center;  
+  align-items: center;      
+  gap: 10px;                  
+  padding: 20px 0 0 0;     
+  background-color: transparent; 
   margin-bottom: 8rem;
 }
 
@@ -23,7 +21,6 @@
   height: 2.5rem;
   cursor: pointer;
 }
-
 
 .formWrapper {
   display: flex;
@@ -37,14 +34,12 @@
 .form {
   color: white;
   padding: 40px;
- 
   border-left: white 2px solid;
   max-width: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
-
 }
 
 .form input,
@@ -84,6 +79,13 @@
 .form button:hover {
   background-color: #333;
 }
+
+/* Footer mobile some no desktop */
+.mobileFooter {
+  display: none;
+}
+
+/* Versão Mobile */
 @media (max-width: 768px) {
   .formContainer {
     flex-direction: column; 
@@ -98,5 +100,13 @@
     border-left: none;  
     max-width: 100%;   
     padding: 20px;     
+  }
+
+  .mobileFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
   }
 }
