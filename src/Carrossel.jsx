@@ -12,31 +12,58 @@ export function Carrossel() {
   const anterior = (ativo + 2) % 3;
   const proximo = (ativo + 1) % 3;
 
+  const handleKeyPress = (e, action) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      action();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.carrossel}>
-       
-        <div className={styles.slideLateral} onClick={() => setAtivo(anterior)}>
+
+   
+        <div
+          className={styles.slideLateral}
+          role="button"
+          tabIndex={0}
+          onClick={() => setAtivo(anterior)}
+          onKeyDown={(e) => handleKeyPress(e, () => setAtivo(anterior))}
+        >
           <div className={styles.slideMini}>
-            <span>{slides[anterior].titulo}</span>
+            <span className={styles.seta}>←</span>
           </div>
-          <p>{slides[anterior].titulo}</p>
+          <p className={styles.slideMiniTitle}>{slides[anterior].titulo}</p>
+        </div>
+
+    
+        <div
+          className={styles.slideCentral}
+          role="button"
+          tabIndex={0}
+          onClick={() => setAtivo(proximo)}
+          onKeyDown={(e) => handleKeyPress(e, () => setAtivo(proximo))}
+        >
+          <h2>{slides[ativo].titulo}</h2>
+          <hr className={styles.divider} />
+          <p className={styles.descricao}>{slides[ativo].descricao}</p>
         </div>
 
      
-        <div className={styles.slideCentral} onClick={() => setAtivo(proximo)}>
-            <h2>{slides[ativo].titulo}</h2>
-            <hr className={styles.divider} />
-            <p className={styles.descricao}>{slides[ativo].descricao}</p>
+        <div
+          className={styles.slideLateral}
+          role="button"
+          tabIndex={0}
+          onClick={() => setAtivo(proximo)}
+          onKeyDown={(e) => handleKeyPress(e, () => setAtivo(proximo))}
+        >
+          <div className={styles.slideMini}>
+            <span className={styles.seta}>→</span>
+          </div>
+          <p className={styles.slideMiniTitle}>{slides[proximo].titulo}</p>
         </div>
 
-  
-        <div className={styles.slideLateral} onClick={() => setAtivo(proximo)}>
-          <div className={styles.slideMini}>
-            <span>{slides[proximo].titulo}</span>
-          </div>
-          <p>{slides[proximo].titulo}</p>
-        </div>
       </div>
     </div>
   );
