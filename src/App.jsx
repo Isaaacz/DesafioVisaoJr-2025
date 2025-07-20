@@ -4,17 +4,21 @@ import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
 import {Inicio } from './Inicio'
 import { Forms } from './forms';
-
+import NossasEmpresas from './components/NossasEmpresas';
 
 
 function App() {
-
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
 
-  const alternarMenuLateral = () => { 
+  const alternarMenuLateral = () => {
     setMenuLateralAberto(!menuLateralAberto);
   };
 
+  const [cabecalhoBackgroundColor, setCabecalhoBackgroundColor] = useState('oklch(12.9% 0.042 264.695)'); // Cor do seu cabeçalho atual
+
+  const handleCabecalhoColorChange = (newColor) => {
+    setCabecalhoBackgroundColor(newColor);
+  };
 
   return (
     <>
@@ -59,10 +63,11 @@ function App() {
         </div>
       </section>
 
-      {/* Seção Nossas Empresas */}
+      {/* Seção Nossas Empresas - TÍTULO 'Nossas Empresas' REMOVIDO DAQUI */}
       <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
         <div className="conteudo-secao">
-          <h1>Nossas Empresas</h1>
+          {/* REMOVIDO: <h1>Nossas Empresas</h1> */}
+          <NossasEmpresas onMenuColorChange={handleCabecalhoColorChange} />
         </div>
       </section>
 
@@ -73,7 +78,6 @@ function App() {
           <Forms></Forms>
         </div>
       </section>
-
     </>
   )
 }
