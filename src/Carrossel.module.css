@@ -83,7 +83,7 @@
 .slideMini {
   position: relative;
   width: 10rem;
-  height: 20rem;
+  height: 10rem;
   background-color: #ccc;
   filter: grayscale(100%);
   opacity: 0.6;
@@ -138,17 +138,17 @@
   }
 
   .carrossel {
-    gap: 2rem; /* Aumenta o espaço entre os slides */
-    align-items: center; /* Garante que os slides estejam alinhados verticalmente */
+    gap: 2rem; 
+    align-items: center; 
     transform: scale(0.9);
     transform-origin: center;
   }
 
   .slideCentral {
-    width: 65vw; /* Largura maior relativa à viewport */
-    max-width: 500px; /* Limite máximo de largura */
-    height: 35vh; /* Altura maior relativa à viewport */
-    max-height: 300px; /* Limite máximo de altura */
+    width: 65vw; 
+    max-width: 500px; 
+    height: 45vh; 
+    max-height: 300px; 
     padding: 1.5rem;
   }
 
@@ -165,11 +165,11 @@
   }
 
   .slideLateral {
-    display: flex; /* Garante que os slides laterais apareçam */
-    width: 20vw; /* Largura menor */
-    max-width: 150px; /* Limite máximo para largura lateral */
-    height: 20vh; /* Altura menor */
-    max-height: 150px; /* Limite máximo para altura lateral */
+    display: flex; 
+    width: 20vw; 
+    max-width: 150px;
+    height: 20vh;
+    max-height: 150px; 
     opacity: 0.7;
     filter: grayscale(80%);
   }
@@ -196,7 +196,7 @@
   }
 }
 
-/* Telas pequenas: celulares */
+
 @media (max-width: 480px) {
   .carrossel {
     gap: 1rem;
@@ -207,7 +207,7 @@
     width: 75vw; 
     max-width: 320px;
     height: 30vh;
-    max-height: 220px;
+    max-height: 4000px;
     padding: 1rem;
   }
 
