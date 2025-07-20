@@ -25,7 +25,7 @@
 .slideCentral {
   width: 60rem;
   height: 30rem;
-  background-color: #D2D2D2;
+  background-color:  #bbcbe2;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -131,12 +131,7 @@
   color: #444;
   text-align: center;
 }
-/* Telas médias: tablets e celulares grandes */
-/* src/components/Carrossel/Carrossel.module.css */
 
-/* ... (seus estilos base) ... */
-
-/* Telas médias: tablets e celulares grandes */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
