@@ -66,7 +66,7 @@ function App() {
         </div>
       </section>
 
-        {/* Seção Nossas Empresas */}
+        {/* Seção Contatos */}
       <section id= "contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
           
