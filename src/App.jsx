@@ -3,8 +3,9 @@ import './App.css';
 import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
 import {Inicio } from './Inicio'
-
+import { Forms } from './forms';
 import NossasEmpresas from './components/NossasEmpresas';
+
 
 function App() {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
@@ -21,7 +22,8 @@ function App() {
 
   return (
     <>
-      <header className="cabecalho" style={{ backgroundColor: cabecalhoBackgroundColor }}>
+      {/* Cabeçalho */}
+      <header className="cabecalho">
         <div className="logo-cabecalho">
           <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
         </div>
@@ -69,10 +71,11 @@ function App() {
         </div>
       </section>
 
-      {/* Seção Contato */}
-      <section id="contato" className="container-secao secao-contato">
+        {/* Seção Contatos */}
+      <section id= "contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          <h1>Contato</h1>
+          
+          <Forms></Forms>
         </div>
       </section>
     </>
