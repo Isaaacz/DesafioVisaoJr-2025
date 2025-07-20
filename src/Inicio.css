@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Navbar fixa no topo */
+.navbar {
+  position: fixed;
+  width: 100vw;
+  background-color: oklch(12.9% 0.042 264.695);
+  padding: 2rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da lista de navegação */
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links do menu */
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Estilo base para todas as seções */
+.section {
+  width: 100vw;  
+  height: 100vh;
+  display: flex;
+}
+
+#inicio {
+  position: relative;
+  overflow: hidden; 
+  background-color: #023e8a;
+}
+
+/* ----------- IMAGEM ESTÁTICA ----------- */
+.static-image {
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.static-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(20%); /* escurece apenas a imagem */
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(20%);
+}
+
+.mensagemImagem {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  max-width: 620px;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  padding: 1rem 2rem;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
+}
+
+.fino {
+  font-weight: 300; 
+}
+
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide > div {
+  width: 100%;
+  height: 100%;
+}
+
+.slick-slide {
+    height: 100%; 
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(20%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Mensagem sobre a imagem */
+.mensagemImagem {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 620px;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  padding: 1rem 2rem;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mensagemImagem h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.mensagemImagem strong {
+  color: #00bcd4;
+}
+
+.fino {
+  font-weight: 300;
+}
+
+.slick-dots {
+  bottom: 30px;
+  z-index: 3;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: white;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #00bcd4;
+}
+
+@media (max-width: 1024px) {
+  .mensagemImagem {
+    max-width: 500px;
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    padding: 0.8rem 1.5rem;
+  }
+
+  .mensagemImagem h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mensagemImagem {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+    padding: 0.5rem 1rem;
+  }
+
+  .mensagemImagem h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .mensagemImagem strong {
+    display: block;
+  }
+
+  .slick-dots {
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mensagemImagem h1 {
+    font-size: 1.8rem;
+  }
+
+  .mensagemImagem strong {
+    display: inline;
+  }
+}
