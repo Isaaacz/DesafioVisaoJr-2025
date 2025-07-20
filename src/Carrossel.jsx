@@ -34,7 +34,6 @@ export function Carrossel() {
           <div className={styles.slideMini}>
             <span className={styles.seta}>←</span>
           </div>
-          <p className={styles.slideMiniTitle}>{slides[anterior].titulo}</p>
         </div>
 
     
@@ -61,7 +60,6 @@ export function Carrossel() {
           <div className={styles.slideMini}>
             <span className={styles.seta}>→</span>
           </div>
-          <p className={styles.slideMiniTitle}>{slides[proximo].titulo}</p>
         </div>
 
       </div>
