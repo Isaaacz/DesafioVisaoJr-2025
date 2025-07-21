@@ -18,7 +18,6 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-
 a:hover {
   color: #535bf2;
 }
@@ -47,11 +46,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
 button:hover {
   border-color: #646cff;
 }
-
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -83,13 +80,6 @@ button:focus-visible {
 .logo-imagem {
   max-height: 100%;
   width: auto;
-}
-
-.subtitulo-sobre-nos {
-  font-size: 1.2em;
-  color: rgba(255, 255, 255, 0.304);
-  margin-top: -40px;
-  margin-bottom: 30px;
 }
 
 .links-navegacao {
@@ -150,7 +140,6 @@ button:focus-visible {
 }
 
 .links-navegacao.nav-mobile a {
-  display: none;
   width: 100%;
   padding: 10px 0;
   text-align: left;
@@ -179,9 +168,43 @@ button:focus-visible {
   visibility: visible;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .links-navegacao.nav-desktop {
+    display: none;
+  }
+  .logo-imagem {
+    height: 130px;
+    max-height: none;
+    width: auto;
+  }
+
+  .icone-hamburguer {
+    display: block;
+  }
+}
+
 .container-secao {
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 80px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -197,6 +220,7 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
+
 .secao-principal {
   padding-top: 80px;
   background-color: #162456;
@@ -207,73 +231,21 @@ button:focus-visible {
   background: #0F2034;
   background-image: #62748E;
 }
-
-.secao-nossas-empresas {
-  background-color: #62748E;
-  color: white;
+.secao-nossas-empresas.h1{
+  align-items: left
 }
 
-.secao-nossas-empresas.h1 {
-  align-items: left;
+.secao-nossas-empresas {
+  background-color: transparent; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 50px;
 }
 
 .secao-contato {
   background-color: #091240 !important;
   color: white;
-}
-
-@media (max-width: 768px) {
-  .cabecalho {
-    height: 80px;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  .links-navegacao.nav-desktop {
-    display: none;
-  }
-
-  .logo-imagem {
-    height: 130px;
-    max-height: none;
-    width: auto;
-  }
-
-  .icone-hamburguer {
-    display: block;
-  }
-
-  .secao-principal {
-    padding-top: 80px;
-  }
-
-  .links-navegacao.nav-mobile a {
-    display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .cabecalho {
-    height: 80px;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  .links-navegacao.nav-desktop {
-    display: none;
-  }
-
-  .logo-imagem {
-    height: 130px;
-    max-height: none;
-    width: auto;
-  }
-
-  .icone-hamburguer {
-    display: block;
-  }
-
-  .links-navegacao.nav-mobile a {
-    display: block;
-  }
 }
