@@ -1,20 +1,21 @@
 import { useState } from 'react';
 import './App.css';
+
 import logoImage from './assets/W&Jlogo.png';
+
 import { Carrossel } from './Carrossel';
-import {Inicio } from './Inicio'
+import { Inicio } from './Inicio';
 import { Forms } from './forms';
 import NossasEmpresas from './components/NossasEmpresas';
-
+import empresas from './data/empresas';
 
 function App() {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
+  const [cabecalhoBackgroundColor, setCabecalhoBackgroundColor] = useState('oklch(12.9% 0.042 264.695)');
 
   const alternarMenuLateral = () => {
     setMenuLateralAberto(!menuLateralAberto);
   };
-
-  const [cabecalhoBackgroundColor, setCabecalhoBackgroundColor] = useState('oklch(12.9% 0.042 264.695)'); // Cor do seu cabeçalho atual
 
   const handleCabecalhoColorChange = (newColor) => {
     setCabecalhoBackgroundColor(newColor);
@@ -23,7 +24,7 @@ function App() {
   return (
     <>
       {/* Cabeçalho */}
-      <header className="cabecalho">
+      <header className="cabecalho" style={{ backgroundColor: cabecalhoBackgroundColor }}>
         <div className="logo-cabecalho">
           <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
         </div>
@@ -40,17 +41,32 @@ function App() {
         </nav>
       </header>
 
-      {/* Menu Lateral (MOBILE) */}
+      {/* Menu Lateral (Mobile) */}
       <div className={`menu-lateral ${menuLateralAberto ? 'aberto' : ''}`}>
         <nav className="links-navegacao nav-mobile">
           <a href="#inicio" onClick={alternarMenuLateral}>Início</a>
           <a href="#sobre-nos" onClick={alternarMenuLateral}>Sobre Nós</a>
           <a href="#nossas-empresas" onClick={alternarMenuLateral}>Nossas Empresas</a>
+
+          {/* Subseções das Empresas */}
+          {empresas.map(empresa => (
+            <a
+              key={empresa.id}
+              href={`#${empresa.id}`}
+              onClick={alternarMenuLateral}
+              className="sublink-empresa"
+            >
+              - {empresa.nome}
+            </a>
+          ))}
+
           <a href="#contato" onClick={alternarMenuLateral}>Contato</a>
         </nav>
       </div>
 
-      {menuLateralAberto && <div className="overlay-menu-lateral" onClick={alternarMenuLateral}></div>}
+      {menuLateralAberto && (
+        <div className="overlay-menu-lateral" onClick={alternarMenuLateral}></div>
+      )}
 
       {/* Seção Início */}
       <Inicio />
@@ -59,27 +75,26 @@ function App() {
       <section id="sobre-nos" className="container-secao secao-sobre-nos">
         <div className="conteudo-secao">
           <h1>Sobre Nós</h1>
+          <p className="subtitulo-sobre-nos">Nossa Jornada, Princípios e Visão</p>
           <Carrossel />
         </div>
       </section>
 
-      {/* Seção Nossas Empresas - TÍTULO 'Nossas Empresas' REMOVIDO DAQUI */}
+      {/* Seção Nossas Empresas */}
       <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
         <div className="conteudo-secao">
-          {/* REMOVIDO: <h1>Nossas Empresas</h1> */}
           <NossasEmpresas onMenuColorChange={handleCabecalhoColorChange} />
         </div>
       </section>
 
-        {/* Seção Contatos */}
-      <section id= "contato" className="container-secao secao-contato">
+      {/* Seção Contato */}
+      <section id="contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          
-          <Forms></Forms>
+          <Forms />
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
