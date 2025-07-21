@@ -1,34 +1,35 @@
 import { useState } from 'react';
 import './App.css';
-
 import logoImage from './assets/W&Jlogo.png';
-
 import { Carrossel } from './Carrossel';
 import {Inicio } from './Inicio';
+
 import NossasEmpresas from './components/NossasEmpresas';
-import { Forms } from './forms';
-import empresas from './data/empresas';
 
 function App() {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
-  const [cabecalhoBackgroundColor, setCabecalhoBackgroundColor] = useState('oklch(12.9% 0.042 264.695)');
 
   const alternarMenuLateral = () => {
     setMenuLateralAberto(!menuLateralAberto);
   };
 
-  const [appBackgroundColor, setAppBackgroundColor] = useState('#1447E6'); 
+  // --- INÍCIO DAS MODIFICAÇÕES DA SUA PARTE ---
+  // Estado para controlar a cor de fundo do CONTAINER PRINCIPAL (o site)
+  // Cor inicial agora é AZUL, como a faixa superior do cabeçalho.
+  const [appBackgroundColor, setAppBackgroundColor] = useState('#1447E6'); // Usando a cor azul do seu cabeçalho original.
+
+  // Função que será passada para NossasEmpresas e, por sua vez, para EmpresaCard.
+  // Ela será chamada quando o botão "Ler Mais" for clicado em um EmpresaCard.
   const handleCardClickChangeAppColor = (newColor) => {
     setAppBackgroundColor(newColor);
-    
-  const handleCabecalhoColorChange = (newColor) => {
-    setCabecalhoBackgroundColor(newColor);
   };
+  // --- FIM DAS MODIFICAÇÕES DA SUA PARTE ---
 
   return (
-    <>
-      {/* Cabeçalho */}
-      <header className="cabecalho" style={{ backgroundColor: cabecalhoBackgroundColor }}>
+    // Aplica a cor de fundo dinamicamente ao elemento principal do App
+    <div className="app-main-container" style={{ backgroundColor: appBackgroundColor }}>
+      {/* Cabeçalho - AGORA COM COR FIXA PRETA (o estilo está no App.css) */}
+      <header className="cabecalho">
         <div className="logo-cabecalho">
           <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
         </div>
@@ -45,32 +46,17 @@ function App() {
         </nav>
       </header>
 
-      {/* Menu Lateral (Mobile) */}
+      {/* Menu Lateral (MOBILE) */}
       <div className={`menu-lateral ${menuLateralAberto ? 'aberto' : ''}`}>
         <nav className="links-navegacao nav-mobile">
           <a href="#inicio" onClick={alternarMenuLateral}>Início</a>
           <a href="#sobre-nos" onClick={alternarMenuLateral}>Sobre Nós</a>
           <a href="#nossas-empresas" onClick={alternarMenuLateral}>Nossas Empresas</a>
-
-          {/* Subseções das Empresas */}
-          {empresas.map(empresa => (
-            <a
-              key={empresa.id}
-              href={`#${empresa.id}`}
-              onClick={alternarMenuLateral}
-              className="sublink-empresa"
-            >
-              - {empresa.nome}
-            </a>
-          ))}
-
           <a href="#contato" onClick={alternarMenuLateral}>Contato</a>
         </nav>
       </div>
 
-      {menuLateralAberto && (
-        <div className="overlay-menu-lateral" onClick={alternarMenuLateral}></div>
-      )}
+      {menuLateralAberto && <div className="overlay-menu-lateral" onClick={alternarMenuLateral}></div>}
 
       {/* Seção Início */}
       <Inicio />
@@ -79,12 +65,11 @@ function App() {
       <section id="sobre-nos" className="container-secao secao-sobre-nos">
         <div className="conteudo-secao">
           <h1>Sobre Nós</h1>
-          <p className="subtitulo-sobre-nos">Nossa Jornada, Princípios e Visão</p>
           <Carrossel />
         </div>
       </section>
 
-      {/* Seção Nossas Empresas */}
+      {/* Seção Nossas Empresas - SUA PARTE */}
       <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
         <div className="conteudo-secao">
           {/* O título "Nossas Empresas" principal está dentro de NossasEmpresas.jsx */}
@@ -95,11 +80,11 @@ function App() {
       {/* Seção Contato */}
       <section id="contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          <Forms />
+          <h1>Contato</h1>
         </div>
       </section>
-    </>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
