@@ -1,29 +1,13 @@
 // src/components/EmpresaCard.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import './EmpresaCard.css';
 
-function EmpresaCard({ nome, descricao, logo, corPaleta, onCardClick, id }) {
-  const [mostrarMais, setMostrarMais] = useState(false);
-
-  const alternarMostrarMais = () => {
-    setMostrarMais(!mostrarMais);
-    if (onCardClick) {
-      onCardClick(corPaleta);
-    }
-  };
-
+function EmpresaCard({ nome, descricao, logo, id }) { // <--- RECEBER O ID AQUI
   return (
-    <div id={id} className={`empresa-card ${mostrarMais ? 'expandido' : ''}`}>
+    <div id={id} className="empresa-card">
       <img src={logo} alt={`Logo ${nome}`} className="empresa-logo" />
       <h2>{nome}</h2>
-      
-      <p className="empresa-descricao">{descricao}</p>
-      
-      {descricao.length > 0 && (
-        <button className="ler-mais-botao" onClick={alternarMostrarMais}>
-          {mostrarMais ? 'Ler Menos' : 'Ler Mais'}
-        </button>
-      )}
+      <p>{descricao}</p>
     </div>
   );
 }
