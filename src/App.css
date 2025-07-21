@@ -1,3 +1,4 @@
+/* src/App.css */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,13 +6,22 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: transparent; /* A cor de fundo principal será controlada pelo React no .app-main-container */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* NOVO: Container principal da aplicação para controlar a cor de fundo de todo o site */
+.app-main-container {
+  min-height: 100vh;
+  /* A cor inicial é definida no useState do App.jsx */
+  transition: background-color 1.0s ease-in-out; /* Transição suave para a cor de fundo do SITE */
+  /* Isso garante que toda a página mude de cor suavemente */
+}
+
 
 a {
   font-weight: 500;
@@ -59,16 +69,17 @@ button:focus-visible {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; 
-  background-color: oklch(12.9% 0.042 264.695);
+  height: 80px;
+  background-color: black; /* AGORA É PRETO FIXO, SEM MUDANÇA DE COR */
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   gap: 10px;
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* REMOVIDO: transition: background-color 0.8s ease-in-out; */
 }
 
 .logo-cabecalho {
@@ -82,7 +93,7 @@ button:focus-visible {
   width: auto;
 }
 
-.links-navegacao { 
+.links-navegacao {
   display: flex;
   gap: 35px;
 }
@@ -92,14 +103,14 @@ button:focus-visible {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   text-decoration: none;
   font-size: 1.4em;
-  border-radius: 5px; 
+  border-radius: 5px;
   padding: 8px 12px;
   font-weight: 300;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .links-navegacao a:hover {
-  background-color: oklch(17.012% 0.05992 269.321);
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
@@ -112,27 +123,27 @@ button:focus-visible {
 }
 
 /* Estilos do Menu Lateral */
-.menu-lateral { 
+.menu-lateral {
   position: fixed;
   top: 0;
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: oklch(12.9% 0.042 264.695);
+  background-color: black; /* Menu lateral também preto */
   z-index: 2000;
   transition: left 0.3s ease-in-out;
   box-shadow: 100% rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   padding-top: 100px;
-  transition: opacity 0.3s ease-in-out; 
+  transition: opacity 0.3s ease-in-out;
 }
 
 .menu-lateral.aberto {
   left: 0;
 }
 
-.links-navegacao.nav-mobile { 
+.links-navegacao.nav-mobile {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -145,64 +156,6 @@ button:focus-visible {
   padding: 10px 0;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.links-navegacao.nav-mobile a:last-child {
-  border-bottom: none;
-}
-
-.overlay-menu-lateral {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1500;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out;
-}
-.overlay-menu-lateral.aberto {
-  opacity: 1;
-  visibility: visible;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-@media (max-width: 768px) {
-  .cabecalho {
-    height: 80px;
-    justify-content: space-between; 
-    padding: 0 20px;
-  }
-
-  .links-navegacao.nav-desktop { 
-    display: none;
-  }
-  .logo-imagem {
-    height: 130px;
-    max-height: none;
-    width: auto; 
-  }
-
-  .icone-hamburguer {
-    display: block;
-  }
-  .secao-principal {
-    padding-top: 80px;
-  }
 }
 
 .links-navegacao.nav-mobile a:last-child {
@@ -261,7 +214,6 @@ button:focus-visible {
   }
 }
 
-/* Garante que o conteúdo das seções esteja abaixo do cabeçalho fixo */
 .container-secao {
   min-height: 100vh;
   padding-top: 80px;
@@ -282,26 +234,30 @@ button:focus-visible {
 
 
 .secao-principal {
-  padding-top: 80px;
-  background-color: #162456;
+  background-color: transparent; /* A cor será definida pelo .app-main-container */
   color: white;
 }
 
 .secao-sobre-nos {
- background: #2A7B9B;
- background-image: #62748E;
+ background: transparent; /* A cor será definida pelo .app-main-container */
+ background-image: transparent; /* A cor será definida pelo .app-main-container */
 }
 .secao-nossas-empresas.h1{
   align-items: left
 }
 
 .secao-nossas-empresas {
-  background-color: #62748E;
+  background-color: transparent; /* Removido background fixo aqui. A cor será do App principal. */
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 50px;
 }
 
 .secao-contato {
-  background-color: #091240 !important;
-  color:  white;
+  background-color: transparent; /* A cor será definida pelo .app-main-container */
+  color: white;
+  position: relative;
 }
-

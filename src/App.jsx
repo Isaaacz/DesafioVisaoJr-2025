@@ -2,10 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import logoImage from './assets/W&Jlogo.png';
 import { Carrossel } from './Carrossel';
-import {Inicio } from './Inicio'
-import { Forms } from './forms';
-import NossasEmpresas from './components/NossasEmpresas';
+import {Inicio } from './Inicio';
 
+import NossasEmpresas from './components/NossasEmpresas';
 
 function App() {
   const [menuLateralAberto, setMenuLateralAberto] = useState(false);
@@ -14,15 +13,22 @@ function App() {
     setMenuLateralAberto(!menuLateralAberto);
   };
 
-  const [cabecalhoBackgroundColor, setCabecalhoBackgroundColor] = useState('oklch(12.9% 0.042 264.695)'); // Cor do seu cabeçalho atual
+  // --- INÍCIO DAS MODIFICAÇÕES DA SUA PARTE ---
+  // Estado para controlar a cor de fundo do CONTAINER PRINCIPAL (o site)
+  // Cor inicial agora é AZUL, como a faixa superior do cabeçalho.
+  const [appBackgroundColor, setAppBackgroundColor] = useState('#1447E6'); // Usando a cor azul do seu cabeçalho original.
 
-  const handleCabecalhoColorChange = (newColor) => {
-    setCabecalhoBackgroundColor(newColor);
+  // Função que será passada para NossasEmpresas e, por sua vez, para EmpresaCard.
+  // Ela será chamada quando o botão "Ler Mais" for clicado em um EmpresaCard.
+  const handleCardClickChangeAppColor = (newColor) => {
+    setAppBackgroundColor(newColor);
   };
+  // --- FIM DAS MODIFICAÇÕES DA SUA PARTE ---
 
   return (
-    <>
-      {/* Cabeçalho */}
+    // Aplica a cor de fundo dinamicamente ao elemento principal do App
+    <div className="app-main-container" style={{ backgroundColor: appBackgroundColor }}>
+      {/* Cabeçalho - AGORA COM COR FIXA PRETA (o estilo está no App.css) */}
       <header className="cabecalho">
         <div className="logo-cabecalho">
           <img src={logoImage} alt="Logo W&J Group" className="logo-imagem" />
@@ -63,22 +69,21 @@ function App() {
         </div>
       </section>
 
-      {/* Seção Nossas Empresas - TÍTULO 'Nossas Empresas' REMOVIDO DAQUI */}
+      {/* Seção Nossas Empresas - SUA PARTE */}
       <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
         <div className="conteudo-secao">
-          {/* REMOVIDO: <h1>Nossas Empresas</h1> */}
-          <NossasEmpresas onMenuColorChange={handleCabecalhoColorChange} />
+          {/* O título "Nossas Empresas" principal está dentro de NossasEmpresas.jsx */}
+          <NossasEmpresas onCardClick={handleCardClickChangeAppColor} /> {/* Passa a função de clique */}
         </div>
       </section>
 
-        {/* Seção Contatos */}
-      <section id= "contato" className="container-secao secao-contato">
+      {/* Seção Contato */}
+      <section id="contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          
-          <Forms></Forms>
+          <h1>Contato</h1>
         </div>
       </section>
-    </>
+    </div>
   )
 }
 
