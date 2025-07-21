@@ -4,9 +4,9 @@ import './App.css';
 import logoImage from './assets/W&Jlogo.png';
 
 import { Carrossel } from './Carrossel';
-import { Inicio } from './Inicio';
-import { Forms } from './forms';
+import {Inicio } from './Inicio';
 import NossasEmpresas from './components/NossasEmpresas';
+import { Forms } from './forms';
 import empresas from './data/empresas';
 
 function App() {
@@ -17,6 +17,10 @@ function App() {
     setMenuLateralAberto(!menuLateralAberto);
   };
 
+  const [appBackgroundColor, setAppBackgroundColor] = useState('#1447E6'); 
+  const handleCardClickChangeAppColor = (newColor) => {
+    setAppBackgroundColor(newColor);
+    
   const handleCabecalhoColorChange = (newColor) => {
     setCabecalhoBackgroundColor(newColor);
   };
@@ -83,7 +87,8 @@ function App() {
       {/* Seção Nossas Empresas */}
       <section id="nossas-empresas" className="container-secao secao-nossas-empresas">
         <div className="conteudo-secao">
-          <NossasEmpresas onMenuColorChange={handleCabecalhoColorChange} />
+          {/* O título "Nossas Empresas" principal está dentro de NossasEmpresas.jsx */}
+          <NossasEmpresas onCardClick={handleCardClickChangeAppColor} /> {/* Passa a função de clique */}
         </div>
       </section>
 
