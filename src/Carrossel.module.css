@@ -6,7 +6,7 @@
   border-radius: 1rem;
 }
 
-/* carrossel principal */
+
 .carrossel {
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
   border-radius: 1rem;
 }
 
-/* slide central */
+
 .slideCentral {
   width: 90%;
   max-width: 60rem;
@@ -41,7 +41,7 @@
   box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.4);
 }
 
-/* container de pontos (dots) */
+
 .dotsContainer {
   position: absolute;
   bottom: 20px;
