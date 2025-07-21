@@ -5,7 +5,7 @@ import { Carrossel } from './Carrossel';
 import { Inicio } from './Inicio';
 import { Forms } from './forms';
 import NossasEmpresas from './components/NossasEmpresas';
-import { Forms } from './forms'; // Certifique-se que Forms é importado se for usado
+
 import empresas from './data/empresas'; // Certifique-se que empresas é importado se for usado
 
 function App() {
@@ -98,7 +98,8 @@ function App() {
       {/* Seção Contato */}
       <section id="contato" className="container-secao secao-contato">
         <div className="conteudo-secao">
-          <h1>Contato</h1>
+       
+          <Forms />
         </div>
       </section>
     </div>

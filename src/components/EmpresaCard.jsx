@@ -1,7 +1,7 @@
 // src/components/EmpresaCard.jsx
 import React from 'react';
 import './EmpresaCard.css';
-
+import { useState } from 'react';
 function EmpresaCard({ nome, descricao, logo, corPaleta, onCardClick }) {
   // Estado para controlar se a descrição completa está sendo exibida ou não
   const [mostrarMais, setMostrarMais] = useState(false); // Inicia como FALSE: texto escondido por padrão
