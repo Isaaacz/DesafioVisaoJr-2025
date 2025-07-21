@@ -11,7 +11,7 @@ const empresas = [
     id: 'happyhour',
     nome: "Happy Hour",
     descricao: "Happy Hour é uma rede de restaurantes fast-food que redefine a experiência de refeições rápidas. Priorizamos a agilidade no serviço sem comprometer o sabor e a qualidade. Nosso menu diversificado oferece opções frescas e deliciosas, preparadas com ingredientes selecionados, ideais para quem busca uma pausa saborosa e eficiente no dia a dia.",
-    paletaCor: "#FFD700", // Amarelo vibrante (mantido, pois não foi solicitada alteração para ele)
+    paletaCor: "#DB9D00", // Amarelo vibrante (mantido, pois não foi solicitada alteração para ele)
     logo: "/logos/happyhour-logo.png"
   },
   {

@@ -1,12 +1,12 @@
 /* src/components/EmpresaCard.css */
 .empresa-card {
-  background-color: #ffffff; /* Fundo do card SEMPRE branco */
+background-color: #1d3450;
   border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   padding: 30px;
   margin: 20px;
   text-align: center;
-  /* CORREÇÃO: Usar flex-basis fixo e flex-grow: 0 para expansão individual */
+
   flex: 0 0 calc(33.33% - 40px); /* 3 colunas em desktop, largura base fixa */
   max-width: 380px; /* Largura máxima */
   display: flex;
@@ -34,19 +34,22 @@
 .empresa-logo {
   width: 150px;
   height: 150px;
-  object-fit: contain;
+  object-fit: cover; /* ALTERADO: Para preencher o círculo */
+  border-radius: 50%; /* ADICIONADO: Para deixar a logo redonda */
+  overflow: hidden; /* ADICIONADO: Para cortar o que exceder o círculo */
   margin-bottom: 25px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .empresa-card h2 {
   font-size: 2.2em;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 15px;
   font-weight: 700;
 }
 
 .empresa-card p.empresa-descricao { /* Adicionei uma classe específica para o parágrafo */
-  color: #666;
+  color: #ffffff;
   font-size: 1.1em;
   line-height: 1.6;
   /* Inicialmente escondido */
@@ -67,19 +70,19 @@
 
 /* Estilo para o botão "Ler Mais" / "Ler Menos" */
 .ler-mais-botao {
-  background-color: #007bff;
-  color: white;
+background-color: transparent; /* Geralmente botões com borda são transparentes */
+  color: white; /* Cor do texto do botão */
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid white; /* ADICIONADO: Borda branca */
+  border-radius: 5px; /* Levemente arredondado */
   cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
+  font-size: 1em;
+  transition: all 0.3s ease; /* Transição para efeitos de hover */
+  margin-top: 20px; /* Adiciona um espaço acima do botão, ajuste se necessário */
 }
 
 .ler-mais-botao:hover {
-  background-color: #0056b3;
+  background-color: #264366;
 }
 
 /* Responsividade */

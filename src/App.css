@@ -70,7 +70,7 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: black; /* AGORA É PRETO FIXO, SEM MUDANÇA DE COR */
+  background-color: oklch(12.9% 0.042 264.695);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -79,7 +79,6 @@ button:focus-visible {
   box-sizing: border-box;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* REMOVIDO: transition: background-color 0.8s ease-in-out; */
 }
 
 .logo-cabecalho {
@@ -122,21 +121,19 @@ button:focus-visible {
   z-index: 1001;
 }
 
-/* Estilos do Menu Lateral */
 .menu-lateral {
   position: fixed;
   top: 0;
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: black; /* Menu lateral também preto */
+  background-color: oklch(12.9% 0.042 264.695);
   z-index: 2000;
-  transition: left 0.3s ease-in-out;
-  box-shadow: 100% rgba(0,0,0,0.5);
+  box-shadow: 100% rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   padding-top: 100px;
-  transition: opacity 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .menu-lateral.aberto {
@@ -234,20 +231,21 @@ button:focus-visible {
 
 
 .secao-principal {
-  background-color: transparent; /* A cor será definida pelo .app-main-container */
+  padding-top: 80px;
+  background-color: #162456;
   color: white;
 }
 
 .secao-sobre-nos {
- background: transparent; /* A cor será definida pelo .app-main-container */
- background-image: transparent; /* A cor será definida pelo .app-main-container */
+  background: #0F2034;
+  background-image: #62748E;
 }
 .secao-nossas-empresas.h1{
   align-items: left
 }
 
 .secao-nossas-empresas {
-  background-color: transparent; /* Removido background fixo aqui. A cor será do App principal. */
+  background-color: transparent; 
   color: white;
   display: flex;
   flex-direction: column;
@@ -257,7 +255,6 @@ button:focus-visible {
 }
 
 .secao-contato {
-  background-color: transparent; /* A cor será definida pelo .app-main-container */
+  background-color: #091240 !important;
   color: white;
-  position: relative;
 }
