@@ -28,6 +28,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -56,9 +57,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -70,7 +73,7 @@ button:focus-visible {
   left: 0;
   width: 100%;
   height: 80px;
-  background-color: black; /* AGORA É PRETO FIXO, SEM MUDANÇA DE COR */
+  background-color: oklch(12.9% 0.042 264.695);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -91,6 +94,13 @@ button:focus-visible {
 .logo-imagem {
   max-height: 100%;
   width: auto;
+}
+
+.subtitulo-sobre-nos {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.304);
+  margin-top: -40px;
+  margin-bottom: 30px;
 }
 
 .links-navegacao {
@@ -122,21 +132,19 @@ button:focus-visible {
   z-index: 1001;
 }
 
-/* Estilos do Menu Lateral */
 .menu-lateral {
   position: fixed;
   top: 0;
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: black; /* Menu lateral também preto */
+  background-color: oklch(12.9% 0.042 264.695);
   z-index: 2000;
-  transition: left 0.3s ease-in-out;
-  box-shadow: 100% rgba(0,0,0,0.5);
+  box-shadow: 100% rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   padding-top: 100px;
-  transition: opacity 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .menu-lateral.aberto {
@@ -152,6 +160,7 @@ button:focus-visible {
 }
 
 .links-navegacao.nav-mobile a {
+  display: none;
   width: 100%;
   padding: 10px 0;
   text-align: left;
@@ -180,43 +189,9 @@ button:focus-visible {
   visibility: visible;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-@media (max-width: 768px) {
-  .cabecalho {
-    height: 80px;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-
-  .links-navegacao.nav-desktop {
-    display: none;
-  }
-  .logo-imagem {
-    height: 130px;
-    max-height: none;
-    width: auto;
-  }
-
-  .icone-hamburguer {
-    display: block;
-  }
-}
-
 .container-secao {
   min-height: 100vh;
-  padding-top: 80px;
+  padding-top: 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -232,32 +207,83 @@ button:focus-visible {
   box-sizing: border-box;
 }
 
-
 .secao-principal {
-  background-color: transparent; /* A cor será definida pelo .app-main-container */
+  padding-top: 80px;
+  background-color: #162456;
   color: white;
 }
 
 .secao-sobre-nos {
- background: transparent; /* A cor será definida pelo .app-main-container */
- background-image: transparent; /* A cor será definida pelo .app-main-container */
-}
-.secao-nossas-empresas.h1{
-  align-items: left
+  background: #0F2034;
+  background-image: #62748E;
 }
 
 .secao-nossas-empresas {
-  background-color: transparent; /* Removido background fixo aqui. A cor será do App principal. */
+  background-color: #62748E;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-bottom: 50px;
+}
+
+.secao-nossas-empresas.h1 {
+  align-items: left;
 }
 
 .secao-contato {
-  background-color: transparent; /* A cor será definida pelo .app-main-container */
+  background-color: #091240 !important;
   color: white;
-  position: relative;
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .links-navegacao.nav-desktop {
+    display: none;
+  }
+
+  .logo-imagem {
+    height: 130px;
+    max-height: none;
+    width: auto;
+  }
+
+  .icone-hamburguer {
+    display: block;
+  }
+
+  .secao-principal {
+    padding-top: 80px;
+  }
+
+  .links-navegacao.nav-mobile a {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecalho {
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .links-navegacao.nav-desktop {
+    display: none;
+  }
+
+  .logo-imagem {
+    height: 130px;
+    max-height: none;
+    width: auto;
+  }
+
+  .icone-hamburguer {
+    display: block;
+  }
+
+  .links-navegacao.nav-mobile a {
+    display: block;
+  }
 }

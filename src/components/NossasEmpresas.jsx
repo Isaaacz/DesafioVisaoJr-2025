@@ -4,7 +4,6 @@ import EmpresaCard from './EmpresaCard';
 import empresas from '../data/empresas'; // Importa os dados das empresas
 import './NossasEmpresas.css';
 
-// Recebe onCardClick como prop para passar para os EmpresaCard
 function NossasEmpresas({ onCardClick }) {
   return (
     <div className="nossas-empresas-landing-page">
@@ -14,6 +13,7 @@ function NossasEmpresas({ onCardClick }) {
         {empresas.map(empresa => (
           <EmpresaCard
             key={empresa.id}
+            id={empresa.id} // <--- PASSAR O ID PARA O EMPRESACARD AQUI
             nome={empresa.nome}
             descricao={empresa.descricao}
             logo={empresa.logo}
