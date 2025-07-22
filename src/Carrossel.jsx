@@ -33,11 +33,7 @@ export function Carrossel() {
     setAtivo(index);
   };
 
-  useEffect(() => {
-    if (carrosselRef.current) {
-      carrosselRef.current.focus();
-    }
-  }, []);
+
 
   const handleKeyDown = (e) => {
     if (e.key === 'ArrowLeft') {

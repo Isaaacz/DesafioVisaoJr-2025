@@ -1,4 +1,4 @@
-// src/components/EmpresaCard.jsx
+
 import React, { useState } from 'react';
 import './EmpresaCard.css';
 
