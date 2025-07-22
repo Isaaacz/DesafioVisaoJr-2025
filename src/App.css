@@ -144,6 +144,7 @@ button:focus-visible {
   padding: 10px 0;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: none;
 }
 
 .links-navegacao.nav-mobile a:last-child {
@@ -199,9 +200,17 @@ button:focus-visible {
 
   .icone-hamburguer {
     display: block;
+    
   }
+  .links-navegacao.nav-mobile a {
+  width: 100%;
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
 }
-
+}
+  
 .container-secao {
   min-height: 100vh;
   padding-top: 80px;

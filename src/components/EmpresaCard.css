@@ -1,14 +1,12 @@
-/* src/components/EmpresaCard.css */
 .empresa-card {
-background-color: #1d3450;
+  background-color: #1d3450;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   padding: 30px;
   margin: 20px;
   text-align: center;
-
-  flex: 0 0 calc(33.33% - 40px); /* 3 colunas em desktop, largura base fixa */
-  max-width: 380px; /* Largura máxima */
+  flex: 0 0 calc(33.33% - 40px); 
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,9 +22,9 @@ background-color: #1d3450;
 .empresa-logo {
   width: 150px;
   height: 150px;
-  object-fit: cover; /* ALTERADO: Para preencher o círculo */
-  border-radius: 50%; /* ADICIONADO: Para deixar a logo redonda */
-  overflow: hidden; /* ADICIONADO: Para cortar o que exceder o círculo */
+  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
   margin-bottom: 25px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
@@ -38,54 +36,49 @@ background-color: #1d3450;
   font-weight: 700;
 }
 
-.empresa-card p.empresa-descricao { /* Adicionei uma classe específica para o parágrafo */
+.empresa-card p.empresa-descricao {
   color: #ffffff;
   font-size: 1.1em;
   line-height: 1.6;
-  /* Inicialmente escondido */
   max-height: 0; 
   opacity: 0;
-  margin-bottom: 0; /* Remova a margem quando escondido */
+  margin-bottom: 0;
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, margin-bottom 0.5s ease-in-out;
   overflow: hidden;
 }
 
-/* Quando o card está expandido, o texto se torna visível */
 .empresa-card.expandido p.empresa-descricao {
-  max-height: 300px; /* Altura máxima para o texto expandido (ajuste se necessário) */
+  max-height: 300px;
   opacity: 1;
-  margin-bottom: 20px; /* Restaura a margem quando visível */
+  margin-bottom: 20px;
 }
 
-
-/* Estilo para o botão "Ler Mais" / "Ler Menos" */
 .ler-mais-botao {
-background-color: transparent; /* Geralmente botões com borda são transparentes */
-  color: white; /* Cor do texto do botão */
+  background-color: transparent;
+  color: white;
   padding: 10px 20px;
-  border: 1px solid white; /* ADICIONADO: Borda branca */
-  border-radius: 5px; /* Levemente arredondado */
+  border: 1px solid white;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
-  transition: all 0.3s ease; /* Transição para efeitos de hover */
-  margin-top: 20px; /* Adiciona um espaço acima do botão, ajuste se necessário */
+  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .ler-mais-botao:hover {
   background-color: #264366;
 }
 
-/* Responsividade */
 @media (max-width: 1024px) {
   .empresa-card {
-    flex: 1 1 calc(50% - 40px); /* 2 colunas em telas médias */
+    flex: 1 1 calc(50% - 40px);
     max-width: 450px;
   }
 }
 
 @media (max-width: 768px) {
   .empresa-card {
-    flex: 1 1 calc(100% - 40px); /* 1 coluna em telas pequenas */
-    max-width: 500px; /* Para não ficar muito largo em telas menores */
+    flex: 1 1 calc(100% - 40px);
+    max-width: 500px;
   }
 }

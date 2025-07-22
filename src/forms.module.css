@@ -9,11 +9,11 @@
 }
 .footerContainer {
   display: flex;
-  justify-content: center;   /* Centraliza os ícones horizontalmente */
-  align-items: center;       /* Alinha verticalmente os ícones entre si */
-  gap: 10px;                  /* Espaçamento entre os ícones */
-  padding: 20px 0 0 0;        /* Espaço acima opcional, remove espaço lateral e inferior */
-  background-color: transparent; /* Remove o fundo azul do footer */
+  justify-content: center; 
+  align-items: center;     
+  gap: 10px;                 
+  padding: 20px 0 0 0;      
+  background-color: transparent;
   margin-bottom: 8rem;
 }
 
@@ -22,6 +22,10 @@
   width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
+}
+.footerContainerMobile {
+  display: none;
+  
 }
 
 
@@ -99,4 +103,20 @@
     max-width: 100%;   
     padding: 20px;     
   }
+  .footerContainerMobile {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 10px;                 
+  padding: 20px 0 0 0;      
+  background-color: transparent;
+  margin-bottom: 8rem;
+}
+
+.footerContainerMobile img {
+  filter: brightness(0) invert(1);
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
 }
