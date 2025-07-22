@@ -9,6 +9,12 @@ Este repositório contém o código-fonte do website da W&J Group, desenvolvido 
 * **CSS Modules:** Para escopo local de estilos em componentes.
 * **CSS Puro:** Para estilos globais e seções principais.
 
+## 🌐 Visualizar Projeto Online
+
+Você pode acessar e explorar o projeto online através do seguinte link:
+
+[**https://desafio-visao-jr-2025.vercel.app**](https://desafio-visao-jr-2025.vercel.app)
+
 ## 🛠️ Como Rodar o Projeto Localmente
 
 Siga estas etapas para ter uma cópia do projeto rodando em sua máquina local para desenvolvimento e testes.
